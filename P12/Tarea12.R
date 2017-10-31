@@ -44,7 +44,7 @@ porcentaje <- c()
 modelos[modelos=='n'] <- 0.99 #0.99 y 0.995
 modelos[modelos=='g'] <- 0.99 #0.99 y 0.995
 modelos[modelos=='b'] <- 0.008 #0.008 y 0.002
-#0.995#0.996 #0.001 CONFUGURACION CHINGONA
+#0.995#0.996 #0.001 CONFUGURACION PRINCIPAL
 # 1 .99 .99 .008
 # 2 .99 .99 .002
 # 3 .99 .995 .008
@@ -97,16 +97,8 @@ timesa <- rbind(timesa, tiempoa)
 }
 stopCluster(cluster)
 print(porcentaje)
-#plot(x=negros, y=porcentaje.n, ylab= "Porcentaje de acierto", xlab= "Probabilidad negro")
-#lines(x=negros, y=porcentaje.n)
-#plot(x=grises, y=porcentaje.g, ylab= "Porcentaje de acierto", xlab= "Probabilidad grises")
-#lines(x=grises, y=porcentaje.g)
-#plot(x=blancos, y=porcentaje.b, ylab= "Porcentaje de acierto", xlab= "Probabilidad blancos")
-#lines(x=blancos, y=porcentaje.b)
-#plot(x = 1:8, y= porcentaje, xlab = "Combinación", ylab= "Porcentaje de acierto")
-#lines(x = 1:8, y= porcentaje)
 
 colnames(times) <- as.character("Sin paralelo")
 colnames(timesa) <- as.character("Paralelo")
 plotear <- data.frame(x=c(times, timesa))
-boxplot(plotear, ylab="Tiempo de ejecución")
+boxplot(plotear, ylab="Tiempo de ejecuciÃ³n")
